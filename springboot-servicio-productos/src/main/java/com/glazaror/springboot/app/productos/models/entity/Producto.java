@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "productos")
@@ -25,6 +26,9 @@ public class Producto implements Serializable {
 	@Column(name = "fecha_creacion")
 	@Temporal(value = TemporalType.DATE)
 	private Date fechaCreacion;
+	
+	@Transient
+	private String puerto;
 	
 	public Long getId() {
 		return id;
@@ -51,5 +55,11 @@ public class Producto implements Serializable {
 		this.fechaCreacion = fechaCreacion;
 	}
 	
+	public String getPuerto() {
+		return puerto;
+	}
+	public void setPuerto(String puerto) {
+		this.puerto = puerto;
+	}
 	private static final long serialVersionUID = 6293927163078853289L;
 }

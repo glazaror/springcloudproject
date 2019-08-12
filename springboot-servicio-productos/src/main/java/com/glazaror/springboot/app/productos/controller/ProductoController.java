@@ -1,8 +1,10 @@
 package com.glazaror.springboot.app.productos.controller;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,16 +18,25 @@ import com.glazaror.springboot.app.productos.service.IProductoService;
 public class ProductoController {
 	
 	@Autowired
+	private Environment environment;
+	
+	@Autowired
 	private IProductoService productoService;
 	
 	@GetMapping
 	public List<Producto> listar() {
-		return productoService.findAll();
+		return productoService.findAll().stream().map(producto -> { 
+				producto.setPuerto(environment.getProperty("local.server.port"));
+				return producto;
+			}
+		).collect(Collectors.toList());
 	}
 
 	@GetMapping(path = "{id}")
 	public Producto detalle(@PathVariable Long id) {
-		return productoService.findById(id);
+		Producto producto = productoService.findById(id);
+		producto.setPuerto(environment.getProperty("local.server.port"));
+		return producto;
 	}
 	
 }

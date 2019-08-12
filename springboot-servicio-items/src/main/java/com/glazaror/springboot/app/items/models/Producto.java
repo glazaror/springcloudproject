@@ -9,6 +9,8 @@ public class Producto {
 	private Double precio;
 	private Date fechaCreacion;
 	
+	private String puerto;
+	
 	public Long getId() {
 		return id;
 	}
@@ -34,4 +36,12 @@ public class Producto {
 		this.fechaCreacion = fechaCreacion;
 	}
 
+
+	
+	public String getPuerto() {
+		return puerto;
+	}
+	public void setPuerto(String puerto) {
+		this.puerto = puerto;
+	}
 }

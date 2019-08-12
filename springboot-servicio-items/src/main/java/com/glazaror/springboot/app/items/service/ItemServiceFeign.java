@@ -12,7 +12,7 @@ import com.glazaror.springboot.app.items.models.Item;
 import com.glazaror.springboot.app.items.models.Producto;
 
 @Service
-@Primary
+//@Primary
 public class ItemServiceFeign implements ItemService {
 	
 	@Autowired

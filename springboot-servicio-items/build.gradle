@@ -34,6 +34,9 @@ dependencies {
 	
 	// dependencia spring cloud discovery eureka client.. esta dependencia incluye ribbon... por lo tanto incluir ribbon es opcional
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+	
+	// dependencia spring cloud hystrix para tolerancia a fallos
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-hystrix'
 }
 
 // gestor de dependencias spring cloud

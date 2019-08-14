@@ -37,9 +37,15 @@ public class ProductoController {
 	}
 
 	@GetMapping(path = "{id}")
-	public Producto detalle(@PathVariable Long id) {
+	public Producto detalle(@PathVariable Long id) throws Exception {
 		Producto producto = productoService.findById(id);
 		producto.setPuerto(puerto);
+		
+		// Generamos un error para verificar funcionamiento de Hystrix (patron circuit breaker)
+		if (id % 2 == 0) {
+			throw new Exception("No se puede cargar el producto");
+		}
+		
 		return producto;
 	}
 	

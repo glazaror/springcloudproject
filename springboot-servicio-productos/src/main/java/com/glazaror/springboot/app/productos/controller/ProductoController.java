@@ -41,7 +41,7 @@ public class ProductoController {
 		Producto producto = productoService.findById(id);
 		producto.setPuerto(puerto);
 		// para probar excepciones con timeout
-		Thread.sleep(2000L);
+		//Thread.sleep(2000L);
 		return producto;
 	}
 	

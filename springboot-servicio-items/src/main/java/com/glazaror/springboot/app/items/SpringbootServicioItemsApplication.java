@@ -7,7 +7,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
-// Habilitamos Hystrix en nuestro proyecto (patron circuit breaker)... maneja los posibles errores (latencia, timeouts) 
+// Habilitamos Hystrix en nuestro proyecto (hystrix implementa el patron de diseño circuit breaker)... maneja los posibles errores (latencia, timeouts)... evita errores en cascada que se pueden presentar en el ecosistema de nuestra aplicacion 
 @EnableCircuitBreaker
 // EnableEurekaClient es habilitado de forma implicita al declarar dependencia en el build.gradle
 // sin embargo como buena practica es mejor declarar de forma explicita

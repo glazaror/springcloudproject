@@ -40,6 +40,9 @@ dependencies {
 	
 	// dependencia cliente spring cloud config... con este dependencia ya se marca automaticamente el microservicio como un cliente del servidor config
 	implementation 'org.springframework.cloud:spring-cloud-starter-config'
+	
+	// dependencia spring cloud actuator para poder refrescar los @Value mediante un endpoint de actuator... sin necesidad de reiniciar los microservicios
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 }
 
 // gestor de dependencias spring cloud

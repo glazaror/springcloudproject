@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +22,10 @@ import com.glazaror.springboot.app.items.models.Producto;
 import com.glazaror.springboot.app.items.service.ItemService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
+// @RefreshScope permite actualizar en los componentes @Component @Service los valores @Value y Environment (por cambios en el servidor de configuracion)
+// sin necesidad de reiniciar los microservicios, es decir los cambios son en linea
+// Todo esto es posible usando el endpoint de actuator... debemos agregar la dependencia de "actuator"
+@RefreshScope
 @RestController
 @RequestMapping(path = "items")
 public class ItemController {
@@ -62,7 +67,7 @@ public class ItemController {
 	}
 	
 	@GetMapping("/obtener-config")
-	public ResponseEntity<?> obtenerConfig(@Value("server.port") String puerto) {
+	public ResponseEntity<?> obtenerConfig(@Value("${server.port}") String puerto) {
 		log.info(texto);
 		Map<String, String> json = new HashMap<String, String>();
 		json.put("texto", texto);

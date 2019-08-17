@@ -16,3 +16,6 @@ Spring Cloud Config
 
 - Se puede tener un archivo de configuración por cada ambiente (desarrollo, calidad, produccion, etc):
     Formato: {nombremicroservicio}-{profile}.properties
+
+- Para refrescar los cambios de los properties del servidor de configuracion en los microservicios (@Value) ... sin necesidad de reiniciar el servidor
+    POST -> localhost:8005/actuator/refresh

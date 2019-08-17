@@ -37,6 +37,9 @@ dependencies {
 	
 	// dependencia spring cloud hystrix para tolerancia a fallos
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-hystrix'
+	
+	// dependencia cliente spring cloud config... con este dependencia ya se marca automaticamente el microservicio como un cliente del servidor config
+	implementation 'org.springframework.cloud:spring-cloud-starter-config'
 }
 
 // gestor de dependencias spring cloud

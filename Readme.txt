@@ -1,4 +1,4 @@
-Spring Cloud
+﻿Spring Cloud
 ------------
 
 Spring Cloud Config
@@ -13,3 +13,6 @@ Spring Cloud Config
     Ejemplo: http://localhost:8888/servicio-items/default
     
 - Para trabajar con un repositorio local el archivo properties debe estar confirmado (commit)
+
+- Se puede tener un archivo de configuración por cada ambiente (desarrollo, calidad, produccion, etc):
+    Formato: {nombremicroservicio}-{profile}.properties

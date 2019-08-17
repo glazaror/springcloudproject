@@ -12,7 +12,7 @@ import com.glazaror.springboot.app.items.models.Item;
 import com.glazaror.springboot.app.items.models.Producto;
 
 @Service
-@Primary
+//@Primary
 public class ItemServiceFeign implements ItemService {
 	
 	@Autowired
@@ -27,6 +27,24 @@ public class ItemServiceFeign implements ItemService {
 	public Item findByItem(Long id, Integer cantidad) {
 		Producto producto = clienteFeign.detalle(id);
 		return new Item(producto, cantidad);
+	}
+
+	@Override
+	public Producto save(Producto producto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Producto update(Producto producto, Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

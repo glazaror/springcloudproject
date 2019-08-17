@@ -11,3 +11,5 @@ Spring Cloud Config
     Donde: nombreambienteOprofile es el nombre del ambiente configurado, si es que no se tiene ninguno entonces se puede usar el "default"
     
     Ejemplo: http://localhost:8888/servicio-items/default
+    
+- Para trabajar con un repositorio local el archivo properties debe estar confirmado (commit)

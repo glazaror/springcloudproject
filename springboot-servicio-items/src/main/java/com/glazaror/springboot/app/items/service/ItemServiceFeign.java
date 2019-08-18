@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.glazaror.springboot.app.items.clientes.ProductoClienteRest;
 import com.glazaror.springboot.app.items.models.Item;
-import com.glazaror.springboot.app.items.models.Producto;
+import com.glazaror.springboot.app.commons.model.entity.Producto;
 
 @Service
 @Primary

@@ -1,5 +1,7 @@
 package com.glazaror.springboot.app.items.models;
 
+import com.glazaror.springboot.app.commons.model.entity.Producto;
+
 public class Item {
 	
 	private Producto producto;

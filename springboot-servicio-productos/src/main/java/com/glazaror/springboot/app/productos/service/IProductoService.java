@@ -2,7 +2,7 @@ package com.glazaror.springboot.app.productos.service;
 
 import java.util.List;
 
-import com.glazaror.springboot.app.productos.models.entity.Producto;
+import com.glazaror.springboot.app.commons.model.entity.Producto;
 
 public interface IProductoService {
 

@@ -3,7 +3,7 @@ package com.glazaror.springboot.app.items.service;
 import java.util.List;
 
 import com.glazaror.springboot.app.items.models.Item;
-import com.glazaror.springboot.app.items.models.Producto;
+import com.glazaror.springboot.app.commons.model.entity.Producto;
 
 public interface ItemService {
 

@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.glazaror.springboot.app.productos.models.entity.Producto;
+import com.glazaror.springboot.app.commons.model.entity.Producto;
 import com.glazaror.springboot.app.productos.service.IProductoService;
 
 @RestController

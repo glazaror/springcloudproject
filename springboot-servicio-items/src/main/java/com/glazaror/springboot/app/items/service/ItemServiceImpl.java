@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.glazaror.springboot.app.items.models.Item;
-import com.glazaror.springboot.app.items.models.Producto;
+import com.glazaror.springboot.app.commons.model.entity.Producto;
 
 @Service
 //@Primary

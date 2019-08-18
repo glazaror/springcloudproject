@@ -1,14 +1,33 @@
-package com.glazaror.springboot.app.items.models;
+package com.glazaror.springboot.app.commons.model.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Producto {
-	
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+
+@Entity
+@Table(name = "productos")
+public class Producto implements Serializable {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nombre;
 	private Double precio;
+	
+	@Column(name = "fecha_creacion")
+	@Temporal(value = TemporalType.DATE)
 	private Date fechaCreacion;
 	
+	@Transient
 	private String puerto;
 	
 	public Long getId() {
@@ -35,8 +54,6 @@ public class Producto {
 	public void setFechaCreacion(Date fechaCreacion) {
 		this.fechaCreacion = fechaCreacion;
 	}
-
-
 	
 	public String getPuerto() {
 		return puerto;
@@ -44,4 +61,5 @@ public class Producto {
 	public void setPuerto(String puerto) {
 		this.puerto = puerto;
 	}
+	private static final long serialVersionUID = 6293927163078853289L;
 }

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.glazaror.springboot.app.productos.dao.ProductoDAO;
-import com.glazaror.springboot.app.productos.models.entity.Producto;
+import com.glazaror.springboot.app.commons.model.entity.Producto;
 
 @Service
 public class ProductoServiceImpl implements IProductoService {

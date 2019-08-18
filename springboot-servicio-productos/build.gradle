@@ -17,6 +17,7 @@ configurations {
 }
 
 repositories {
+	mavenLocal()
 	mavenCentral()
 }
 
@@ -32,6 +33,9 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	// dependencia spring cloud discovery eureka client
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+	
+	// dependencia de libreria commons
+	implementation group: 'com.glazaror.springboot.app.commons', name: 'springboot-servicio-commons', version: '0.0.1-SNAPSHOT'
 }
 
 // gestor de dependencias spring cloud

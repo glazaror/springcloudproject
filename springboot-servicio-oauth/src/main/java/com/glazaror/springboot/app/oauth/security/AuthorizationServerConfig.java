@@ -1,5 +1,9 @@
 package com.glazaror.springboot.app.oauth.security;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.assertj.core.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,6 +14,8 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.A
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+import org.springframework.security.oauth2.provider.token.TokenEnhancer;
+import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
@@ -25,6 +31,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	
 	@Autowired
 	private AuthenticationManager authenticationManager;
+	
+	@Autowired
+	private InfoAdicionalToken infoAdicionalToken;
 
 	// 2. Debemos implementar los 3 metodos de AuthorizationServerConfigurerAdapter
 	@Override
@@ -103,9 +112,18 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 		// 3. El access token converter (que debe ser de tipo JWT) que se encarga de guardar los datos del usuario en el token (datos como el username, roles, cualquier tipo de informacion adicional conocidos como claims)
 		// 	  Por detras este componente se encarga de tomar estos valores del usuario y convertirlos en el token JWT codificado en base64
 		
+		// Creamos un chain de enhancers (incluyendo el access token converter y el infoAdicionalToken)
+		TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
+		List<TokenEnhancer> tokenEnhancers = new ArrayList<TokenEnhancer>();
+		tokenEnhancers.add(infoAdicionalToken);
+		tokenEnhancers.add(accessTokenConverter());
+		tokenEnhancerChain.setTokenEnhancers(tokenEnhancers);
+		
+		// adicionamos el tokenenhancerchain en el endpoint
 		endpoints.authenticationManager(authenticationManager)
 		.tokenStore(tokenStore())
-		.accessTokenConverter(accessTokenConverter());
+		.accessTokenConverter(accessTokenConverter())
+		.tokenEnhancer(tokenEnhancerChain);
 	}
 	
 	// utilizamos el tipo concreto JwtTokenStore para poder generar el token y almacenarlo.

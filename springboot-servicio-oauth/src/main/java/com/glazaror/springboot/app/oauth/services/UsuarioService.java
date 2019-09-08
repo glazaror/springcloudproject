@@ -19,7 +19,7 @@ import com.glazaror.springboot.app.usuario.commons.model.entity.Usuario;
 
 @Service
 // UserDetailsService es especial... es propia de Spring Security
-public class UsuarioService implements UserDetailsService {
+public class UsuarioService implements UserDetailsService, IUsuarioService {
 	
 	private Logger log = LoggerFactory.getLogger(UsuarioService.class);
 
@@ -50,6 +50,11 @@ public class UsuarioService implements UserDetailsService {
 		// La clase org.springframework.security.core.userdetails.User recibe como ultimo parametro la lista de roles asignados al usuario
 		// La lista de roles es de un tipo especifico de Spring Security: GrantedAuthority
 		return new User(usuario.getUsername(), usuario.getPassword(), usuario.getEnabled(), true, true, true, authorities);
+	}
+
+	@Override
+	public Usuario findByUsername(String username) {
+		return client.findByUsername(username);
 	}
 
 }

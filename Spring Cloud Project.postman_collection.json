@@ -1,0 +1,283 @@
+{
+	"id": "3a800dc1-9198-05d8-fa98-ced2ae576135",
+	"name": "Spring Cloud Project",
+	"description": "",
+	"order": [
+		"acf1fc29-a563-8b28-8b5a-ab4df9b45010",
+		"d9834477-5314-c1c6-0e30-1775806e8568",
+		"c7f35445-12f9-b9b2-2534-3fc992d107ec",
+		"47e7bd2d-1ddc-46df-433a-0e20e671a47f",
+		"d5dbb34c-b424-c3f6-f90f-dc6df4e63b95",
+		"d1e5d161-e86f-375d-6364-1212db02bdd5"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1567854246460,
+	"owner": "4591688",
+	"public": false,
+	"requests": [
+		{
+			"id": "47e7bd2d-1ddc-46df-433a-0e20e671a47f",
+			"headers": "Content-Type: application/json\nx-ibm-client-id: 486c5aa3-d9a7-47e1-b39e-bbbff1c1069c\nx-ibm-client-secret: hW8gL3cJ4pG4cA3nJ6cX2cW6yV7lB5aG8eW5oU5vN6hL5gL5wN\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-ibm-client-id",
+					"value": "486c5aa3-d9a7-47e1-b39e-bbbff1c1069c",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-ibm-client-secret",
+					"value": "hW8gL3cJ4pG4cA3nJ6cX2cW6yV7lB5aG8eW5oU5vN6hL5gL5wN",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8090/api/usuarios/usuarios/7",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1567855730390,
+			"name": "Eliminar Usuarios",
+			"description": "",
+			"collectionId": "3a800dc1-9198-05d8-fa98-ced2ae576135",
+			"responses": [],
+			"rawModeData": "{\n\t\"HeaderIn\":{\n\t\t\"country\":\"PE\",\n\t\t\"lang\":\"es\",\n\t\t\"entity\":\"TDP\",\n\t\t\"system\":\"APPVENTASFIJA\",\n\t\t\"subsystem\":\"APPVENTASFIJA\",\n\t\t\"originator\":\"PE:TDP:APPVENTASFIJA:APPVENTASFIJA\",\n\t\t\"sender\":\"OracleServiceBus\",\n\t\t\"userId\":\"AppUser\",\n\t\t\"wsId\":\"BluemixEveir\",\n\t\t\"wsIp\":\"10.11.11.11\",\n\t\t\"operation\":\"Consulta FFTT a AAVE\",\n\t\t\"destination\":\"ES:BUS:AVVE:AVVE\",\n\t\t\"execId\":\"550e8400-e29b-41d4-a716-446655440003\",\n\t\t\"timestamp\":\"2018-09-15T01:23:36.967-05:00\",\n\t\t\"msgType\":\"REQUEST\"\n\t},\n\t\"BodyIn\":{\n\t\t\"telefono\": \"12653454\"\n\t}\n}"
+		},
+		{
+			"id": "acf1fc29-a563-8b28-8b5a-ab4df9b45010",
+			"headers": "Content-Type: application/json\nx-ibm-client-id: 486c5aa3-d9a7-47e1-b39e-bbbff1c1069c\nx-ibm-client-secret: hW8gL3cJ4pG4cA3nJ6cX2cW6yV7lB5aG8eW5oU5vN6hL5gL5wN\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-ibm-client-id",
+					"value": "486c5aa3-d9a7-47e1-b39e-bbbff1c1069c",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-ibm-client-secret",
+					"value": "hW8gL3cJ4pG4cA3nJ6cX2cW6yV7lB5aG8eW5oU5vN6hL5gL5wN",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8090/api/usuarios/usuarios",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1567856213291,
+			"name": "Usuarios",
+			"description": "",
+			"collectionId": "3a800dc1-9198-05d8-fa98-ced2ae576135",
+			"responses": [],
+			"rawModeData": "{\n\t\"HeaderIn\":{\n\t\t\"country\":\"PE\",\n\t\t\"lang\":\"es\",\n\t\t\"entity\":\"TDP\",\n\t\t\"system\":\"APPVENTASFIJA\",\n\t\t\"subsystem\":\"APPVENTASFIJA\",\n\t\t\"originator\":\"PE:TDP:APPVENTASFIJA:APPVENTASFIJA\",\n\t\t\"sender\":\"OracleServiceBus\",\n\t\t\"userId\":\"AppUser\",\n\t\t\"wsId\":\"BluemixEveir\",\n\t\t\"wsIp\":\"10.11.11.11\",\n\t\t\"operation\":\"Consulta FFTT a AAVE\",\n\t\t\"destination\":\"ES:BUS:AVVE:AVVE\",\n\t\t\"execId\":\"550e8400-e29b-41d4-a716-446655440003\",\n\t\t\"timestamp\":\"2018-09-15T01:23:36.967-05:00\",\n\t\t\"msgType\":\"REQUEST\"\n\t},\n\t\"BodyIn\":{\n\t\t\"telefono\": \"12653454\"\n\t}\n}"
+		},
+		{
+			"id": "c7f35445-12f9-b9b2-2534-3fc992d107ec",
+			"headers": "Content-Type: application/json\nx-ibm-client-id: 486c5aa3-d9a7-47e1-b39e-bbbff1c1069c\nx-ibm-client-secret: hW8gL3cJ4pG4cA3nJ6cX2cW6yV7lB5aG8eW5oU5vN6hL5gL5wN\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-ibm-client-id",
+					"value": "486c5aa3-d9a7-47e1-b39e-bbbff1c1069c",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-ibm-client-secret",
+					"value": "hW8gL3cJ4pG4cA3nJ6cX2cW6yV7lB5aG8eW5oU5vN6hL5gL5wN",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8090/api/usuarios/usuarios/5",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1567855506129,
+			"name": "Editar Usuarios",
+			"description": "",
+			"collectionId": "3a800dc1-9198-05d8-fa98-ced2ae576135",
+			"responses": [],
+			"rawModeData": "{\n    \"username\": \"gladys\",\n\t\"password\": \"12345\",\n\t\"enabled\": true,\n\t\"nombre\": \"Gladys\",\n\t\"apellido\": \"Ramos\",\n\t\"email\": \"gramosv64@gmail.com\",\n\t\"roles\": [\n\t    {\n\t        \"nombre\": \"ROLE_USER\"\n\t    },\n\t    {\n\t        \"nombre\": \"ROLE_ADMIN\"\n\t    }\n\t]\n}"
+		},
+		{
+			"id": "d1e5d161-e86f-375d-6364-1212db02bdd5",
+			"headers": "Authorization: Basic ZnJvbnRlbmRhcHA6MTIzNDU=\nContent-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic ZnJvbnRlbmRhcHA6MTIzNDU=",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8090/api/security/oauth/token",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "username",
+					"value": "admin",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "12345",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "grant_type",
+					"value": "password",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1567958593514,
+			"name": "Generar Token",
+			"description": "",
+			"collectionId": "3a800dc1-9198-05d8-fa98-ced2ae576135",
+			"responses": []
+		},
+		{
+			"id": "d5dbb34c-b424-c3f6-f90f-dc6df4e63b95",
+			"headers": "Content-Type: application/json\nx-ibm-client-id: 486c5aa3-d9a7-47e1-b39e-bbbff1c1069c\nx-ibm-client-secret: hW8gL3cJ4pG4cA3nJ6cX2cW6yV7lB5aG8eW5oU5vN6hL5gL5wN\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-ibm-client-id",
+					"value": "486c5aa3-d9a7-47e1-b39e-bbbff1c1069c",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-ibm-client-secret",
+					"value": "hW8gL3cJ4pG4cA3nJ6cX2cW6yV7lB5aG8eW5oU5vN6hL5gL5wN",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8090/api/usuarios/usuarios",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "3a800dc1-9198-05d8-fa98-ced2ae576135",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Usuarios por metodos personalizados",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1567856108858,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"HeaderIn\":{\n\t\t\"country\":\"PE\",\n\t\t\"lang\":\"es\",\n\t\t\"entity\":\"TDP\",\n\t\t\"system\":\"APPVENTASFIJA\",\n\t\t\"subsystem\":\"APPVENTASFIJA\",\n\t\t\"originator\":\"PE:TDP:APPVENTASFIJA:APPVENTASFIJA\",\n\t\t\"sender\":\"OracleServiceBus\",\n\t\t\"userId\":\"AppUser\",\n\t\t\"wsId\":\"BluemixEveir\",\n\t\t\"wsIp\":\"10.11.11.11\",\n\t\t\"operation\":\"Consulta FFTT a AAVE\",\n\t\t\"destination\":\"ES:BUS:AVVE:AVVE\",\n\t\t\"execId\":\"550e8400-e29b-41d4-a716-446655440003\",\n\t\t\"timestamp\":\"2018-09-15T01:23:36.967-05:00\",\n\t\t\"msgType\":\"REQUEST\"\n\t},\n\t\"BodyIn\":{\n\t\t\"telefono\": \"12653454\"\n\t}\n}"
+		},
+		{
+			"id": "d9834477-5314-c1c6-0e30-1775806e8568",
+			"headers": "Content-Type: application/json\nx-ibm-client-id: 486c5aa3-d9a7-47e1-b39e-bbbff1c1069c\nx-ibm-client-secret: hW8gL3cJ4pG4cA3nJ6cX2cW6yV7lB5aG8eW5oU5vN6hL5gL5wN\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-ibm-client-id",
+					"value": "486c5aa3-d9a7-47e1-b39e-bbbff1c1069c",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-ibm-client-secret",
+					"value": "hW8gL3cJ4pG4cA3nJ6cX2cW6yV7lB5aG8eW5oU5vN6hL5gL5wN",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8090/api/usuarios/usuarios/",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1567855606562,
+			"name": "Registrar Usuarios",
+			"description": "",
+			"collectionId": "3a800dc1-9198-05d8-fa98-ced2ae576135",
+			"responses": [],
+			"rawModeData": "{\n    \"username\": \"prueba\",\n    \"password\": \"12345\",\n    \"enabled\": true,\n    \"nombre\": \"Prueba\",\n    \"apellido\": \"Pruebita\",\n    \"email\": \"pruebita@gmail.com\",\n    \"roles\": [\n        {\n            \"id\": 1,\n            \"nombre\": \"ROLE_USER\"\n        },\n        {\n            \"id\": 2,\n            \"nombre\": \"ROLE_ADMIN\"\n        }\n    ]\n}"
+		}
+	]
+}

@@ -19,3 +19,7 @@ Spring Cloud Config
 
 - Para refrescar los cambios de los properties del servidor de configuracion en los microservicios (@Value) ... sin necesidad de reiniciar el servidor
     POST -> localhost:8005/actuator/refresh
+	
+Spring Security (OAuth 2)
+- El esquema de tablas de usuario:
+	usuarios (1)---(1..*) usuario_roles (1..*)---(1) roles

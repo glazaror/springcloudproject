@@ -29,6 +29,9 @@ dependencies {
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-zuul'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
+	// adicionamos dependencia spring cloud security oauth2 para configurar el servidor de recurso
+	implementation group: 'org.springframework.security.oauth.boot', name: 'spring-security-oauth2-autoconfigure', version: '2.1.7.RELEASE'
 }
 
 dependencyManagement {

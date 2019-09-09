@@ -5,9 +5,12 @@
 	"order": [
 		"acf1fc29-a563-8b28-8b5a-ab4df9b45010",
 		"d9834477-5314-c1c6-0e30-1775806e8568",
+		"0831559a-0656-9f24-1fb5-4958b939668a",
 		"c7f35445-12f9-b9b2-2534-3fc992d107ec",
 		"47e7bd2d-1ddc-46df-433a-0e20e671a47f",
+		"02ea2b74-4c2f-8052-1fa8-6173fb180986",
 		"d5dbb34c-b424-c3f6-f90f-dc6df4e63b95",
+		"16f9d1f4-6454-1f18-98b5-284ff699e1b0",
 		"d1e5d161-e86f-375d-6364-1212db02bdd5"
 	],
 	"folders": [],
@@ -16,6 +19,118 @@
 	"owner": "4591688",
 	"public": false,
 	"requests": [
+		{
+			"id": "02ea2b74-4c2f-8052-1fa8-6173fb180986",
+			"headers": "Content-Type: application/x-www-form-urlencoded\nAuthorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJhcGVsbGlkbyI6IkxhemFybyIsImNvcnJlbyI6ImRsYXphcm9iMThAZ21haWwuY29tIiwiZXhwIjoxNTY4MDAzOTczLCJub21icmUiOiJEYWZuZSIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwianRpIjoiZjcxMzA3ODgtMGYwNC00MGFjLThhYjAtNjg4ZTQwMmFjMDY3IiwiY2xpZW50X2lkIjoiZnJvbnRlbmRhcHAifQ.F463kYrj4o5gpAgd-LG4W9K6m-eMmQy3n01U1f8zYbQ\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJhcGVsbGlkbyI6IkxhemFybyIsImNvcnJlbyI6ImRsYXphcm9iMThAZ21haWwuY29tIiwiZXhwIjoxNTY4MDAzOTczLCJub21icmUiOiJEYWZuZSIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwianRpIjoiZjcxMzA3ODgtMGYwNC00MGFjLThhYjAtNjg4ZTQwMmFjMDY3IiwiY2xpZW50X2lkIjoiZnJvbnRlbmRhcHAifQ.F463kYrj4o5gpAgd-LG4W9K6m-eMmQy3n01U1f8zYbQ",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8090/api/usuarios/usuarios/7",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1568000493695,
+			"name": "Eliminar Usuarios (securizado con oauth2)",
+			"description": "",
+			"collectionId": "3a800dc1-9198-05d8-fa98-ced2ae576135",
+			"responses": []
+		},
+		{
+			"id": "0831559a-0656-9f24-1fb5-4958b939668a",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJhcGVsbGlkbyI6IkxhemFybyIsImNvcnJlbyI6ImRsYXphcm9iMThAZ21haWwuY29tIiwiZXhwIjoxNTY4MDAzOTczLCJub21icmUiOiJEYWZuZSIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwianRpIjoiZjcxMzA3ODgtMGYwNC00MGFjLThhYjAtNjg4ZTQwMmFjMDY3IiwiY2xpZW50X2lkIjoiZnJvbnRlbmRhcHAifQ.F463kYrj4o5gpAgd-LG4W9K6m-eMmQy3n01U1f8zYbQ\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJhcGVsbGlkbyI6IkxhemFybyIsImNvcnJlbyI6ImRsYXphcm9iMThAZ21haWwuY29tIiwiZXhwIjoxNTY4MDAzOTczLCJub21icmUiOiJEYWZuZSIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwianRpIjoiZjcxMzA3ODgtMGYwNC00MGFjLThhYjAtNjg4ZTQwMmFjMDY3IiwiY2xpZW50X2lkIjoiZnJvbnRlbmRhcHAifQ.F463kYrj4o5gpAgd-LG4W9K6m-eMmQy3n01U1f8zYbQ",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8090/api/usuarios/usuarios/",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1568000611922,
+			"name": "Registrar Usuarios (securizado con oauth2)",
+			"description": "",
+			"collectionId": "3a800dc1-9198-05d8-fa98-ced2ae576135",
+			"responses": [],
+			"rawModeData": "{\n    \"username\": \"prueba\",\n    \"password\": \"12345\",\n    \"enabled\": true,\n    \"nombre\": \"Prueba\",\n    \"apellido\": \"Pruebita\",\n    \"email\": \"pruebita@gmail.com\",\n    \"roles\": [\n        {\n            \"id\": 1,\n            \"nombre\": \"ROLE_USER\"\n        },\n        {\n            \"id\": 2,\n            \"nombre\": \"ROLE_ADMIN\"\n        }\n    ]\n}"
+		},
+		{
+			"id": "16f9d1f4-6454-1f18-98b5-284ff699e1b0",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJhcGVsbGlkbyI6IkxhemFybyIsImNvcnJlbyI6ImRsYXphcm9iMThAZ21haWwuY29tIiwiZXhwIjoxNTY4MDAzOTczLCJub21icmUiOiJEYWZuZSIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwianRpIjoiZjcxMzA3ODgtMGYwNC00MGFjLThhYjAtNjg4ZTQwMmFjMDY3IiwiY2xpZW50X2lkIjoiZnJvbnRlbmRhcHAifQ.F463kYrj4o5gpAgd-LG4W9K6m-eMmQy3n01U1f8zYbQ\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJhcGVsbGlkbyI6IkxhemFybyIsImNvcnJlbyI6ImRsYXphcm9iMThAZ21haWwuY29tIiwiZXhwIjoxNTY4MDAzOTczLCJub21icmUiOiJEYWZuZSIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwianRpIjoiZjcxMzA3ODgtMGYwNC00MGFjLThhYjAtNjg4ZTQwMmFjMDY3IiwiY2xpZW50X2lkIjoiZnJvbnRlbmRhcHAifQ.F463kYrj4o5gpAgd-LG4W9K6m-eMmQy3n01U1f8zYbQ",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8090/api/usuarios/usuarios/search/findByUsername?nombre=admin",
+			"queryParams": [
+				{
+					"key": "nombre",
+					"value": "admin",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1568000392228,
+			"name": "Usuarios por metodos personalizados (securizado con oauth2)",
+			"description": "",
+			"collectionId": "3a800dc1-9198-05d8-fa98-ced2ae576135",
+			"responses": [],
+			"rawModeData": "{\n\t\"HeaderIn\":{\n\t\t\"country\":\"PE\",\n\t\t\"lang\":\"es\",\n\t\t\"entity\":\"TDP\",\n\t\t\"system\":\"APPVENTASFIJA\",\n\t\t\"subsystem\":\"APPVENTASFIJA\",\n\t\t\"originator\":\"PE:TDP:APPVENTASFIJA:APPVENTASFIJA\",\n\t\t\"sender\":\"OracleServiceBus\",\n\t\t\"userId\":\"AppUser\",\n\t\t\"wsId\":\"BluemixEveir\",\n\t\t\"wsIp\":\"10.11.11.11\",\n\t\t\"operation\":\"Consulta FFTT a AAVE\",\n\t\t\"destination\":\"ES:BUS:AVVE:AVVE\",\n\t\t\"execId\":\"550e8400-e29b-41d4-a716-446655440003\",\n\t\t\"timestamp\":\"2018-09-15T01:23:36.967-05:00\",\n\t\t\"msgType\":\"REQUEST\"\n\t},\n\t\"BodyIn\":{\n\t\t\"telefono\": \"12653454\"\n\t}\n}"
+		},
 		{
 			"id": "47e7bd2d-1ddc-46df-433a-0e20e671a47f",
 			"headers": "Content-Type: application/json\nx-ibm-client-id: 486c5aa3-d9a7-47e1-b39e-bbbff1c1069c\nx-ibm-client-secret: hW8gL3cJ4pG4cA3nJ6cX2cW6yV7lB5aG8eW5oU5vN6hL5gL5wN\n",
@@ -91,7 +206,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1567856213291,
+			"time": 1567999880809,
 			"name": "Usuarios",
 			"description": "",
 			"collectionId": "3a800dc1-9198-05d8-fa98-ced2ae576135",
@@ -189,7 +304,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1567958593514,
+			"time": 1568000372812,
 			"name": "Generar Token",
 			"description": "",
 			"collectionId": "3a800dc1-9198-05d8-fa98-ced2ae576135",

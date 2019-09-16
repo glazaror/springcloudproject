@@ -11,7 +11,10 @@
 		"02ea2b74-4c2f-8052-1fa8-6173fb180986",
 		"d5dbb34c-b424-c3f6-f90f-dc6df4e63b95",
 		"16f9d1f4-6454-1f18-98b5-284ff699e1b0",
-		"d1e5d161-e86f-375d-6364-1212db02bdd5"
+		"d1e5d161-e86f-375d-6364-1212db02bdd5",
+		"f15796d9-2762-61b6-a03c-a18842091724",
+		"9dc246c0-c4c8-a432-1ce3-c89ecf42e86f",
+		"cef5c0cd-24f5-aba1-885c-0190ab372aac"
 	],
 	"folders": [],
 	"folders_order": [],
@@ -36,7 +39,7 @@
 					"enabled": true
 				}
 			],
-			"url": "http://localhost:8090/api/usuarios/usuarios/7",
+			"url": "http://localhost:8090/api/usuarios/usuarios/4",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -47,7 +50,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1568000493695,
+			"time": 1568000663323,
 			"name": "Eliminar Usuarios (securizado con oauth2)",
 			"description": "",
 			"collectionId": "3a800dc1-9198-05d8-fa98-ced2ae576135",
@@ -55,7 +58,7 @@
 		},
 		{
 			"id": "0831559a-0656-9f24-1fb5-4958b939668a",
-			"headers": "Content-Type: application/json\nAuthorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJhcGVsbGlkbyI6IkxhemFybyIsImNvcnJlbyI6ImRsYXphcm9iMThAZ21haWwuY29tIiwiZXhwIjoxNTY4MDAzOTczLCJub21icmUiOiJEYWZuZSIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwianRpIjoiZjcxMzA3ODgtMGYwNC00MGFjLThhYjAtNjg4ZTQwMmFjMDY3IiwiY2xpZW50X2lkIjoiZnJvbnRlbmRhcHAifQ.F463kYrj4o5gpAgd-LG4W9K6m-eMmQy3n01U1f8zYbQ\n",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJhcGVsbGlkbyI6IkxhemFybyIsImNvcnJlbyI6ImRsYXphcm9iMThAZ21haWwuY29tIiwiZXhwIjoxNTY4NjMxMjM0LCJub21icmUiOiJEYWZuZSIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwianRpIjoiODIwNTlhNWMtM2JiMC00YjM5LWFhYTUtNTBjOWYyMDNmZDBlIiwiY2xpZW50X2lkIjoiZnJvbnRlbmRhcHAifQ.YVA3PKcAniwAf_QElKZ-B87iiq6cZ-uC11bzIGIUb9w\n",
 			"headerData": [
 				{
 					"key": "Content-Type",
@@ -65,7 +68,7 @@
 				},
 				{
 					"key": "Authorization",
-					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJhcGVsbGlkbyI6IkxhemFybyIsImNvcnJlbyI6ImRsYXphcm9iMThAZ21haWwuY29tIiwiZXhwIjoxNTY4MDAzOTczLCJub21icmUiOiJEYWZuZSIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwianRpIjoiZjcxMzA3ODgtMGYwNC00MGFjLThhYjAtNjg4ZTQwMmFjMDY3IiwiY2xpZW50X2lkIjoiZnJvbnRlbmRhcHAifQ.F463kYrj4o5gpAgd-LG4W9K6m-eMmQy3n01U1f8zYbQ",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJhcGVsbGlkbyI6IkxhemFybyIsImNvcnJlbyI6ImRsYXphcm9iMThAZ21haWwuY29tIiwiZXhwIjoxNTY4NjMxMjM0LCJub21icmUiOiJEYWZuZSIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwianRpIjoiODIwNTlhNWMtM2JiMC00YjM5LWFhYTUtNTBjOWYyMDNmZDBlIiwiY2xpZW50X2lkIjoiZnJvbnRlbmRhcHAifQ.YVA3PKcAniwAf_QElKZ-B87iiq6cZ-uC11bzIGIUb9w",
 					"description": "",
 					"enabled": true
 				}
@@ -81,7 +84,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1568000611922,
+			"time": 1568627673255,
 			"name": "Registrar Usuarios (securizado con oauth2)",
 			"description": "",
 			"collectionId": "3a800dc1-9198-05d8-fa98-ced2ae576135",
@@ -173,6 +176,49 @@
 			"rawModeData": "{\n\t\"HeaderIn\":{\n\t\t\"country\":\"PE\",\n\t\t\"lang\":\"es\",\n\t\t\"entity\":\"TDP\",\n\t\t\"system\":\"APPVENTASFIJA\",\n\t\t\"subsystem\":\"APPVENTASFIJA\",\n\t\t\"originator\":\"PE:TDP:APPVENTASFIJA:APPVENTASFIJA\",\n\t\t\"sender\":\"OracleServiceBus\",\n\t\t\"userId\":\"AppUser\",\n\t\t\"wsId\":\"BluemixEveir\",\n\t\t\"wsIp\":\"10.11.11.11\",\n\t\t\"operation\":\"Consulta FFTT a AAVE\",\n\t\t\"destination\":\"ES:BUS:AVVE:AVVE\",\n\t\t\"execId\":\"550e8400-e29b-41d4-a716-446655440003\",\n\t\t\"timestamp\":\"2018-09-15T01:23:36.967-05:00\",\n\t\t\"msgType\":\"REQUEST\"\n\t},\n\t\"BodyIn\":{\n\t\t\"telefono\": \"12653454\"\n\t}\n}"
 		},
 		{
+			"id": "9dc246c0-c4c8-a432-1ce3-c89ecf42e86f",
+			"headers": "Content-Type: application/json\nx-ibm-client-id: 486c5aa3-d9a7-47e1-b39e-bbbff1c1069c\nx-ibm-client-secret: hW8gL3cJ4pG4cA3nJ6cX2cW6yV7lB5aG8eW5oU5vN6hL5gL5wN\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-ibm-client-id",
+					"value": "486c5aa3-d9a7-47e1-b39e-bbbff1c1069c",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-ibm-client-secret",
+					"value": "hW8gL3cJ4pG4cA3nJ6cX2cW6yV7lB5aG8eW5oU5vN6hL5gL5wN",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8888/servicio-items/default",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "3a800dc1-9198-05d8-fa98-ced2ae576135",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Refresh Scope",
+			"description": "Config Server",
+			"descriptionFormat": "html",
+			"time": 1568625690355,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"HeaderIn\":{\n\t\t\"country\":\"PE\",\n\t\t\"lang\":\"es\",\n\t\t\"entity\":\"TDP\",\n\t\t\"system\":\"APPVENTASFIJA\",\n\t\t\"subsystem\":\"APPVENTASFIJA\",\n\t\t\"originator\":\"PE:TDP:APPVENTASFIJA:APPVENTASFIJA\",\n\t\t\"sender\":\"OracleServiceBus\",\n\t\t\"userId\":\"AppUser\",\n\t\t\"wsId\":\"BluemixEveir\",\n\t\t\"wsIp\":\"10.11.11.11\",\n\t\t\"operation\":\"Consulta FFTT a AAVE\",\n\t\t\"destination\":\"ES:BUS:AVVE:AVVE\",\n\t\t\"execId\":\"550e8400-e29b-41d4-a716-446655440003\",\n\t\t\"timestamp\":\"2018-09-15T01:23:36.967-05:00\",\n\t\t\"msgType\":\"REQUEST\"\n\t},\n\t\"BodyIn\":{\n\t\t\"telefono\": \"12653454\"\n\t}\n}"
+		},
+		{
 			"id": "acf1fc29-a563-8b28-8b5a-ab4df9b45010",
 			"headers": "Content-Type: application/json\nx-ibm-client-id: 486c5aa3-d9a7-47e1-b39e-bbbff1c1069c\nx-ibm-client-secret: hW8gL3cJ4pG4cA3nJ6cX2cW6yV7lB5aG8eW5oU5vN6hL5gL5wN\n",
 			"headerData": [
@@ -253,6 +299,55 @@
 			"collectionId": "3a800dc1-9198-05d8-fa98-ced2ae576135",
 			"responses": [],
 			"rawModeData": "{\n    \"username\": \"gladys\",\n\t\"password\": \"12345\",\n\t\"enabled\": true,\n\t\"nombre\": \"Gladys\",\n\t\"apellido\": \"Ramos\",\n\t\"email\": \"gramosv64@gmail.com\",\n\t\"roles\": [\n\t    {\n\t        \"nombre\": \"ROLE_USER\"\n\t    },\n\t    {\n\t        \"nombre\": \"ROLE_ADMIN\"\n\t    }\n\t]\n}"
+		},
+		{
+			"id": "cef5c0cd-24f5-aba1-885c-0190ab372aac",
+			"headers": "Authorization: Basic ZnJvbnRlbmRhcHA6MTIzNDU=\nContent-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic ZnJvbnRlbmRhcHA6MTIzNDU=",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8090/api/security/oauth/token",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "grant_type",
+					"value": "refresh_token",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "refresh_token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJhcGVsbGlkbyI6IkxhemFybyIsImNvcnJlbyI6ImRsYXphcm9iMThAZ21haWwuY29tIiwiYXRpIjoiODIwNTlhNWMtM2JiMC00YjM5LWFhYTUtNTBjOWYyMDNmZDBlIiwiZXhwIjoxNTY4NjMxMjM0LCJub21icmUiOiJEYWZuZSIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwianRpIjoiMzdlNmI2ZjgtZTgxMi00MzgyLWE3NzgtODA3NmZiODBiMDAxIiwiY2xpZW50X2lkIjoiZnJvbnRlbmRhcHAifQ.BYTsZ9jgGesM0XGP6srIpwk5ZKS4tDkNkCcQtmWx11o",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1568628109021,
+			"name": "Refresh Token",
+			"description": "",
+			"collectionId": "3a800dc1-9198-05d8-fa98-ced2ae576135",
+			"responses": []
 		},
 		{
 			"id": "d1e5d161-e86f-375d-6364-1212db02bdd5",
@@ -393,6 +488,47 @@
 			"collectionId": "3a800dc1-9198-05d8-fa98-ced2ae576135",
 			"responses": [],
 			"rawModeData": "{\n    \"username\": \"prueba\",\n    \"password\": \"12345\",\n    \"enabled\": true,\n    \"nombre\": \"Prueba\",\n    \"apellido\": \"Pruebita\",\n    \"email\": \"pruebita@gmail.com\",\n    \"roles\": [\n        {\n            \"id\": 1,\n            \"nombre\": \"ROLE_USER\"\n        },\n        {\n            \"id\": 2,\n            \"nombre\": \"ROLE_ADMIN\"\n        }\n    ]\n}"
+		},
+		{
+			"id": "f15796d9-2762-61b6-a03c-a18842091724",
+			"headers": "Content-Type: application/json\nx-ibm-client-id: 486c5aa3-d9a7-47e1-b39e-bbbff1c1069c\nx-ibm-client-secret: hW8gL3cJ4pG4cA3nJ6cX2cW6yV7lB5aG8eW5oU5vN6hL5gL5wN\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-ibm-client-id",
+					"value": "486c5aa3-d9a7-47e1-b39e-bbbff1c1069c",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "x-ibm-client-secret",
+					"value": "hW8gL3cJ4pG4cA3nJ6cX2cW6yV7lB5aG8eW5oU5vN6hL5gL5wN",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8888/servicio-items/default",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1568625294504,
+			"name": "Config Server",
+			"description": "Config Server",
+			"collectionId": "3a800dc1-9198-05d8-fa98-ced2ae576135",
+			"responses": [],
+			"rawModeData": "{\n\t\"HeaderIn\":{\n\t\t\"country\":\"PE\",\n\t\t\"lang\":\"es\",\n\t\t\"entity\":\"TDP\",\n\t\t\"system\":\"APPVENTASFIJA\",\n\t\t\"subsystem\":\"APPVENTASFIJA\",\n\t\t\"originator\":\"PE:TDP:APPVENTASFIJA:APPVENTASFIJA\",\n\t\t\"sender\":\"OracleServiceBus\",\n\t\t\"userId\":\"AppUser\",\n\t\t\"wsId\":\"BluemixEveir\",\n\t\t\"wsIp\":\"10.11.11.11\",\n\t\t\"operation\":\"Consulta FFTT a AAVE\",\n\t\t\"destination\":\"ES:BUS:AVVE:AVVE\",\n\t\t\"execId\":\"550e8400-e29b-41d4-a716-446655440003\",\n\t\t\"timestamp\":\"2018-09-15T01:23:36.967-05:00\",\n\t\t\"msgType\":\"REQUEST\"\n\t},\n\t\"BodyIn\":{\n\t\t\"telefono\": \"12653454\"\n\t}\n}"
 		}
 	]
 }

@@ -1,6 +1,6 @@
 plugins {
-	id 'org.springframework.boot' version '2.1.7.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.7.RELEASE'
+	id 'org.springframework.boot' version '2.1.8.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 	id 'java'
 }
 
@@ -31,7 +31,10 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	
 	// adicionamos dependencia spring cloud security oauth2 para configurar el servidor de recurso
-	implementation group: 'org.springframework.security.oauth.boot', name: 'spring-security-oauth2-autoconfigure', version: '2.1.7.RELEASE'
+	implementation group: 'org.springframework.security.oauth.boot', name: 'spring-security-oauth2-autoconfigure', version: '2.1.8.RELEASE'
+	
+	// dependencia cliente spring cloud config para que los datos de configuracion (client id, secret, key para generar/firmar/validar token) se tomen del servidor de configuracion... con este dependencia ya se marca automaticamente el microservicio como un cliente del servidor config
+	implementation 'org.springframework.cloud:spring-cloud-starter-config'
 }
 
 dependencyManagement {

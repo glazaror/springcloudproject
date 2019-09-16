@@ -1,5 +1,7 @@
 package com.glazaror.springboot.app.zuul.oauth;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -10,6 +12,8 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
+// Para poder actualizar los datos del servidor de configuracion en el microservicio sin necesidad de reiniciar usamos @RefreshScope
+@RefreshScope
 @Configuration
 // Habilitamos la configuracion del servidor de recurso @EnableResourceServer 
 @EnableResourceServer
@@ -17,6 +21,9 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 // 1. Para proteger nuestras rutas endpoints
 // 2. Para configurar el token (con la misma estructura que el servidor de autorizacion)
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
+	
+	@Value("${config.security.oauth.jwt.key}")
+	private String jwtKey;
 
 	// Para configurar el token
 	@Override
@@ -71,7 +78,9 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 		
 		// luego se pasara el codigo secreto al servidor de configuracion
 		// la idea es que este codigo secreto sea un texto bien ofuscado
-		tokenConverter.setSigningKey("algun_codigo_secreto_aeiou");
+		
+		// Reemplazamos las configuracion que estaba en forma literal x los datos que ahora estan en el servidor de configuracion (key para firmar el token)
+		tokenConverter.setSigningKey(jwtKey);
 		return tokenConverter;
 	}
 }

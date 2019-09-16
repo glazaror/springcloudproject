@@ -5,8 +5,10 @@ import java.util.List;
 
 import org.assertj.core.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
@@ -19,6 +21,8 @@ import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
+// Para poder actualizar los datos del servidor de configuracion en el microservicio sin necesidad de reiniciar usamos @RefreshScope
+@RefreshScope
 // Similar a SpringSecurityConfig pero con configuracion especifica de oauth2
 @Configuration
 // Habilitamos la clase como un servidor de autorizacion -> @EnableAuthorizationServer y extendemos AuthorizationServerConfigurerAdapter
@@ -34,6 +38,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	
 	@Autowired
 	private InfoAdicionalToken infoAdicionalToken;
+	
+	@Autowired
+	private Environment environment;
 
 	// 2. Debemos implementar los 3 metodos de AuthorizationServerConfigurerAdapter
 	@Override
@@ -77,8 +84,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 		
 		// Configuramos un cliente adicional (por ejemplo angularapp)
 		
-		clients.inMemory().withClient("frontendapp")
-		.secret(passwordEncoder.encode("12345"))
+		// Reemplazamos las configuraciones que estaban en forma literal x los datos que ahora estan en el servidor de configuracion (client id, secret)
+		clients.inMemory().withClient(environment.getProperty("config.security.oauth.client.id"))
+		.secret(passwordEncoder.encode(environment.getProperty("config.security.oauth.client.secret")))
 		.scopes("read", "write")
 		.authorizedGrantTypes("password", "refresh_token")
 		.accessTokenValiditySeconds(3600)
@@ -142,7 +150,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 		
 		// luego se pasara el codigo secreto al servidor de configuracion
 		// la idea es que este codigo secreto sea un texto bien ofuscado
-		tokenConverter.setSigningKey("algun_codigo_secreto_aeiou");
+		
+		// Reemplazamos las configuracion que estaba en forma literal x los datos que ahora estan en el servidor de configuracion (key para firmar el token)
+		tokenConverter.setSigningKey(environment.getProperty("config.security.oauth.jwt.key"));
 		return tokenConverter;
 	}
 	

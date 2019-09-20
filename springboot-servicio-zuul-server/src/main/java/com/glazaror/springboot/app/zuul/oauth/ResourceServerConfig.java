@@ -1,9 +1,13 @@
 package com.glazaror.springboot.app.zuul.oauth;
 
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.Ordered;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
@@ -11,6 +15,10 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
 
 // Para poder actualizar los datos del servidor de configuracion en el microservicio sin necesidad de reiniciar usamos @RefreshScope
 @RefreshScope
@@ -58,9 +66,42 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 		// Finalmente la regla mas generica es la ruta que no se haya configurado (que no se haya especificado en las reglas) la configuramos para que requiera autenticacion
 		// anyRequest: cualquier ruta que no haya sido configurada (que no se haya especificado como regla)
 		// authenticated: requiere autenticacion
-		.anyRequest().authenticated();
+		.anyRequest().authenticated()
+		// Adicionamos configuracion CORS
+		.and().cors().configurationSource(corsConfigurationSource());
 	}
 	
+	@Bean
+	public CorsConfigurationSource corsConfigurationSource() {
+		CorsConfiguration corsConfig = new CorsConfiguration();
+		// configuramos las aplicaciones cliente (su ubicacion: nombre de dominio, puerto)
+		// por ejemplo si la aplicacion cliente es angular: http://...:4002
+		// o podriamos dejarlo de una forma mas generica... indicando *
+		corsConfig.setAllowedOrigins(Arrays.asList("*"));
+		// ahora los metodos http permitidos... es importante indicar el verbo "OPTIONS" ya que por debajo lo utiliza oauth2 (sobre todo en los enpoint oauth)
+		corsConfig.setAllowedMethods(Arrays.asList("POST", "GET", "PUT", "DELETE", "OPTIONS"));
+		// configurar el permiso del uso de credenciales
+		corsConfig.setAllowCredentials(true);
+		// permitir el uso de cabeceras oauth... como "authorizacion" para el envio del token en las cabeceras y tambien cuando nos autenticamos con el client_id y secret
+		corsConfig.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type"));
+		
+		// Ahora pasamos la configuracion CORS a nuestras rutas URL
+		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+		// para que se aplique a todas nuestras rutas URL seteamos "/**"
+		source.registerCorsConfiguration("/**", corsConfig);
+		
+		return source;
+	}
+	
+	// CORS -> aplicamos un filter para que la configuracion CORS se aplique de forma global... no solo a spring security sino a toda la aplicacion
+	@Bean
+	public FilterRegistrationBean<CorsFilter> corsFilter() {
+		FilterRegistrationBean<CorsFilter> bean = new FilterRegistrationBean<CorsFilter>(new CorsFilter(corsConfigurationSource()));
+		// indicamos prioridad alta para el filter:
+		bean.setOrder(Ordered.HIGHEST_PRECEDENCE);
+		return bean;
+	}
+
 	// Copiamos el tokenStore y accessTokenConverter que fueron definidos en el "authorization server"... ya que debemos usar la misma estructura para validar el token... incluido el mismo signing key usado para firmar el token
 	// utilizamos el tipo concreto JwtTokenStore para poder generar el token y almacenarlo.
 	@Bean

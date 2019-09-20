@@ -3,6 +3,7 @@ package com.glazaror.springboot.app.oauth.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationEventPublisher;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -14,6 +15,10 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
 	private UserDetailsService usuarioService;
+	
+	// Inyectamos el handler de manejo de exito y fracaso de autenticacion
+	@Autowired
+	private AuthenticationEventPublisher eventPublisher;
 	
 	// para que se guarde en el contenedor de spring usamos @Bean... y lo podamos utilizar para encriptar nuestras contrasenas
 	// tanto para la autenticacion (metodo configure(AuthenticationManagerBuilder)) como para configurar oauth2
@@ -31,7 +36,9 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 		// tenemos que encriptar la contrasena con Bcrypt (funcion hash) para dar mas seguridad al password
 		// Cuando el usuario inicia sesion ingresa su contrasena, automaticamente el sistema va a encriptar ese password en bcrypt
 		// Y lo va a comparar con el password que esta en base datos (que tambien tiene que estar en bcrypt)
-		auth.userDetailsService(usuarioService).passwordEncoder(passwordEncoder());
+		auth.userDetailsService(usuarioService).passwordEncoder(passwordEncoder())
+		// Registramos el eventPublisher de manejo de exito y fracaso de autenticacion
+		.and().authenticationEventPublisher(eventPublisher);
 	}
 	
 	// por ultimo tenemos que configurar el authentication manager

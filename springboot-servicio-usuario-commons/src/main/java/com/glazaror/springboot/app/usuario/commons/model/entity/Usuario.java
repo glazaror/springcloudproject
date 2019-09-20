@@ -46,7 +46,10 @@ public class Usuario implements Serializable {
 		inverseJoinColumns = @JoinColumn(name = "role_id"),
 		uniqueConstraints = {@UniqueConstraint(columnNames = {"usuario_id", "role_id"})})
 	private List<Rol> roles;
-
+	
+	// Adicionamos atributo "intentos" para control de intentos de login
+	private Integer intentos;
+	
 	public Long getId() {
 		return id;
 	}
@@ -103,8 +106,6 @@ public class Usuario implements Serializable {
 		this.email = email;
 	}
 
-	private static final long serialVersionUID = -30670306840856503L;
-
 	public List<Rol> getRoles() {
 		return roles;
 	}
@@ -112,5 +113,15 @@ public class Usuario implements Serializable {
 	public void setRoles(List<Rol> roles) {
 		this.roles = roles;
 	}
+
+	public Integer getIntentos() {
+		return intentos;
+	}
+
+	public void setIntentos(Integer intentos) {
+		this.intentos = intentos;
+	}
+
+	private static final long serialVersionUID = -30670306840856503L;
 
 }

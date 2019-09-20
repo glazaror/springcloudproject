@@ -5,4 +5,6 @@ import com.glazaror.springboot.app.usuario.commons.model.entity.Usuario;
 public interface IUsuarioService {
 
 	public Usuario findByUsername(String username);
+	
+	public Usuario update(Usuario usuario, Long id);
 }

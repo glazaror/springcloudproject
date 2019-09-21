@@ -23,3 +23,13 @@ Spring Cloud Config
 Spring Security (OAuth 2)
 - El esquema de tablas de usuario:
 	usuarios (1)---(1..*) usuario_roles (1..*)---(1) roles
+
+
+Spring Sleuth (trace id, span id)
+- Para trabajar con Zipkin descargar: https://zipkin.io/pages/quickstart.html
+	java -jar zipkin-server-2.16.2-exec.jar
+
+  Puerto por defecto de la consola: 9411
+	http://localhost:9411/zipkin/
+
+- Si es que configuramos dependencia Zipkin en nuestro proyecto entonces por defecto se adiciona la dependencia Sleuth

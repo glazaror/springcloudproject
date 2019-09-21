@@ -36,6 +36,9 @@ dependencies {
 	
 	// dependencia de libreria commons
 	implementation group: 'com.glazaror.springboot.app.commons', name: 'springboot-servicio-commons', version: '0.0.1-SNAPSHOT'
+	
+	// dependencia sleuth para configurar trazabilidad distribuida
+	implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
 }
 
 // gestor de dependencias spring cloud

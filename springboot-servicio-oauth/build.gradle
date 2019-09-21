@@ -37,8 +37,12 @@ dependencies {
 	// dependencia cliente spring cloud config para que los datos de configuracion (client id, secret, key para generar/firmar/validar token) se tomen del servidor de configuracion... con este dependencia ya se marca automaticamente el microservicio como un cliente del servidor config
 	implementation 'org.springframework.cloud:spring-cloud-starter-config'
 	
-	// dependencia sleuth para configurar trazabilidad distribuida
-	implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
+	// dependencia sleuth para configurar trazabilidad distribuida... quitamos dependencia explicita de sleuth... ya que ya la contiene zipkin
+	// implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
+	
+	// dependencia zipkin (incluye sleuth) para configurar trazabilidad distribuida
+	// con esto marcamos nuestro microservicio como cliente
+	implementation 'org.springframework.cloud:spring-cloud-starter-zipkin'
 }
 
 dependencyManagement {

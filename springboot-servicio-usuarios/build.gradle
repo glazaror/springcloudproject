@@ -37,8 +37,12 @@ dependencies {
 	// dependencia usuarios-commons
 	implementation group: 'com.glazaror.springboot.app.usuario.commons', name: 'springboot-servicio-usuario-commons', version: '0.0.1-SNAPSHOT'
 	
-	// dependencia sleuth para configurar trazabilidad distribuida
-	implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
+	// dependencia sleuth para configurar trazabilidad distribuida... quitamos dependencia explicita de sleuth... ya que ya la contiene zipkin
+	// implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
+	
+	// dependencia zipkin (incluye sleuth) para configurar trazabilidad distribuida
+	// con esto marcamos nuestro microservicio como cliente
+	implementation 'org.springframework.cloud:spring-cloud-starter-zipkin'
 }
 
 dependencyManagement {

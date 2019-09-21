@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 import com.glazaror.springboot.app.oauth.services.IUsuarioService;
 import com.glazaror.springboot.app.usuario.commons.model.entity.Usuario;
 
+import brave.Tracer;
 import feign.FeignException;
 
 // Creamos un handler de manejo de exito y fracaso en autenticacion
@@ -23,6 +24,9 @@ public class AuthenticationSucessErrorHandler implements AuthenticationEventPubl
 	
 	@Autowired
 	private IUsuarioService usuarioService;
+	
+	@Autowired
+	private Tracer tracer;
 
 	@Override
 	public void publishAuthenticationSuccess(Authentication authentication) {
@@ -46,6 +50,10 @@ public class AuthenticationSucessErrorHandler implements AuthenticationEventPubl
 		log.info(mensaje);
 		
 		try {
+			
+			StringBuilder errors = new StringBuilder();
+			errors.append(mensaje);
+			
 			Usuario usuario = usuarioService.findByUsername(authentication.getName());
 			if (usuario.getIntentos() == null) {
 				usuario.setIntentos(0);
@@ -54,11 +62,18 @@ public class AuthenticationSucessErrorHandler implements AuthenticationEventPubl
 			usuario.setIntentos(usuario.getIntentos() + 1);
 			log.info("Intentos despues es de: " + usuario.getIntentos());
 			
+			errors.append(" - Intentos despues es de: " + usuario.getIntentos());
+			
 			if (usuario.getIntentos() >= 3) {
-				log.error(String.format("El usuario %s deshabilitado por maximos intentos", usuario.getUsername()));
+				String errorMaximosIntentos = String.format("El usuario %s deshabilitado por maximos intentos", usuario.getUsername());
+				log.error(errorMaximosIntentos);
+				errors.append(" - " + errorMaximosIntentos);
 				usuario.setEnabled(false);
 			}
 			usuarioService.update(usuario, usuario.getId());
+			
+			// pintamos el tag personalizado en el log (sleuth/zipkin)
+			tracer.currentSpan().tag("error.mensaje", errors.toString());
 			
 		} catch (FeignException e) {
 			log.error(String.format("El usuario %s no existe en el sistema", authentication.getName()));

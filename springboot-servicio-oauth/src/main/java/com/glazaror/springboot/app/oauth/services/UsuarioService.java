@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 import com.glazaror.springboot.app.oauth.client.UsuarioFeignClient;
 import com.glazaror.springboot.app.usuario.commons.model.entity.Usuario;
 
+import brave.Tracer;
 import feign.FeignException;
 
 @Service
@@ -27,6 +28,9 @@ public class UsuarioService implements UserDetailsService, IUsuarioService {
 
 	@Autowired
 	private UsuarioFeignClient client;
+	
+	@Autowired
+	private Tracer tracer;
 	
 	// Implementamos metodo que se encarga de autenticar... de obtener el usuario por el username... independiente de que si estamos usando jpa, jdbc, microservicios (usando api rest)
 	// Este metodo retorna un usuario autenticado (UserDetails... clase propia de Spring Security)
@@ -50,8 +54,11 @@ public class UsuarioService implements UserDetailsService, IUsuarioService {
 			return new User(usuario.getUsername(), usuario.getPassword(), usuario.getEnabled(), true, true, true, authorities);
 			
 		} catch (FeignException e) {
-			log.error("Error en el login, no existe el usuario '" + username + "'en el sistema");
-			throw new UsernameNotFoundException("Error en el login, no existe el usuario '" + username + "'en el sistema");
+			String error = "Error en el login, no existe el usuario '" + username + "'en el sistema";
+			log.error(error);
+			// pintamos el tag personalizado en el log (sleuth/zipkin)
+			tracer.currentSpan().tag("error.mensaje", error + ":" + e.getMessage());
+			throw new UsernameNotFoundException(error);
 		}
 	}
 

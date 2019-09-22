@@ -33,3 +33,17 @@ Spring Sleuth (trace id, span id)
 	http://localhost:9411/zipkin/
 
 - Si es que configuramos dependencia Zipkin en nuestro proyecto entonces por defecto se adiciona la dependencia Sleuth
+
+- Broken de mensajeria: Podemos usar RabittMQ como intermediario para publicar/consumir las trazas de sleuth en vez de usar http
+  Descargamos RabbitMQ para windows: https://www.rabbitmq.com/install-windows.html
+
+  RabbitMQ necesita el lenguaje de programación ERLANG... se debe instalar: https://www.erlang.org/downloads
+  Agregar al path los binarios de RabbitMQ para poder ejecutar comandos de rabbit desde la consola de comandos:
+  C:\Program Files\RabbitMQ Server\rabbitmq_server-3.7.18\sbin
+
+  Para habilitar la consola web de rabbitmq se debe habilitar el plugin siguiente:
+	  rabbitmq-plugins enable rabbitmq_management
+
+  Para acceder a la consola web de rabbit: http://localhost:15672/
+  usuario y clave por defecto para la consola web: guest / guest
+  

@@ -43,6 +43,12 @@ dependencies {
 	// dependencia zipkin (incluye sleuth) para configurar trazabilidad distribuida
 	// con esto marcamos nuestro microservicio como cliente
 	implementation 'org.springframework.cloud:spring-cloud-starter-zipkin'
+	
+	// dependencia "spring-boot-starter-amqp" messaging para rabbitmq... para que las trazas distribuidas sean enviadas a zipkin usando el intermediario message broker "rabbitmq"
+	// con esta dependencia las trazas son automaticamente enviadas a zipkin usando el intermediario message broker (en este caso rabbitmq)
+	// es decir no es necesario ninguna configuracion adicional en los microservicios
+	// lo que si tenemos que configurar es el servidor zipkin (el broker, el storage) para que sea un consumidor del message broker (a traves de variables de entorno)
+	implementation 'org.springframework.boot:spring-boot-starter-amqp'
 }
 
 // gestor de dependencias spring cloud

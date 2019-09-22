@@ -47,3 +47,7 @@ Spring Sleuth (trace id, span id)
   Para acceder a la consola web de rabbit: http://localhost:15672/
   usuario y clave por defecto para la consola web: guest / guest
   
+- Zipkin con almacenamiento mysql:
+  Crear la base de datos zipkin con el esquema recomendado en "https://github.com/openzipkin/zipkin/tree/master/zipkin-storage/mysql-v1"
+  Se debe crear un usuario con privilegios de select/insert/update/delete/execute/show* en la bd zipkin
+  Las constantes (variables de entorno) deben crearse de acuerdo a lo indicado en: https://github.com/openzipkin/zipkin/tree/master/zipkin-server
